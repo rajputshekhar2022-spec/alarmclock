@@ -30,7 +30,6 @@ The scope of this project includes:
 - Saving alarms permanently
 
 - Date-based alarms
-- 
 ---
 
 ## High-Level Features
