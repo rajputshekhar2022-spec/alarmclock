@@ -5,11 +5,11 @@ import pygame
 def set_alarm(alarm_time):
     print(f"Alarm set for {alarm_time}.")
     sound_file = r"C:\vs code\Python Projects\coolzone.mp3"
-  # Replace with your alarm sound file path
+  
     
-    pygame.mixer.init()  # Initialize mixer once
+    pygame.mixer.init()  
     
-    alarm_triggered = False  # To avoid multiple triggers
+    alarm_triggered = False 
     
     while True:
         current_time = datetime.datetime.now().strftime("%H:%M")
@@ -17,15 +17,15 @@ def set_alarm(alarm_time):
             print("Alarm ringing!")
             pygame.mixer.music.load(sound_file)
             pygame.mixer.music.play()
-            alarm_triggered = True  # Set the flag so it won't trigger again
+            alarm_triggered = True 
             
-            # Wait until the sound stops playing
+            
             while pygame.mixer.music.get_busy():
                 time.sleep(1)
             
             print("Alarm ended. Press Ctrl+C to exit or set a new alarm.")
         
-        time.sleep(10)  # Check every 10 seconds to reduce CPU usage
+        time.sleep(10)  
 
 def validate_time_format(alarm_time):
     try:
@@ -43,5 +43,6 @@ if __name__ == "__main__":
             print("Invalid time format. Please enter time as HH:MM.")
     
     set_alarm(alarm_time)
+
 
 
