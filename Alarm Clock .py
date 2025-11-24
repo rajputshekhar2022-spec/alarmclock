@@ -1,66 +1,27 @@
-import tkinter as tk
-import datetime
-import time
-import threading
-
-alarms = []  # List to store all alarms
-
-def check_alarms():
-    while True:
-        now = datetime.datetime.now().strftime("%H:%M:%S")  # Current time
-        for a in alarms:
-            if a == now:            # If alarm matches current time
-                show_popup(a)     
-                alarms.remove(a)    # Remove alarm after ringing
-                update_list()       
-        time.sleep(1)
-
-def show_popup(t):
-    p = tk.Toplevel(root)
-    p.title("Alarm")
-    tk.Label(p, text=f"Alarm: {t}", font=("Arial",14)).pack(pady=10)
-    tk.Button(p, text="OK", command=p.destroy).pack(pady=5)
-
-def add_alarm():
-    h,m,s = hour.get(), minute.get(), second.get()
-
-    # Check inputs are digits
-    if not(h.isdigit() and m.isdigit() and s.isdigit()):
-        return
-
-    # Formatting time
-    t = f"{h.zfill(2)}:{m.zfill(2)}:{s.zfill(2)}"
-    alarms.append(t)
-    update_list()
-
-def delete_alarm():
-    sel = box.curselection()
-    if sel:
-        alarms.pop(sel[0])   # Remove selected alarm
-        update_list()
-
-# Refresh the display
-def update_list():
-    box.delete(0, tk.END)
-    for a in alarms:
-        box.insert(tk.END, a)
-        
-root = tk.Tk()
-root.title("Alarm Clock")
-tk.Label(root, text="Alarm Clock", font=("Arial",16)).pack(pady=10)
-
 # Input fields for HH MM SS
-f = tk.Frame(root); f.pack()
-hour = tk.Entry(f, width=3); hour.grid(row=0,column=0)
-minute = tk.Entry(f, width=3); minute.grid(row=0,column=1)
-second = tk.Entry(f, width=3); second.grid(row=0,column=2)
+hour_input = widgets.Text(description='Hour (0-23):', value='00', style={'description_width': 'initial'})
+minute_input = widgets.Text(description='Minute (0-59):', value='00', style={'description_width': 'initial'})
+second_input = widgets.Text(description='Second (0-59):', value='00', style={'description_width': 'initial'})
 
-tk.Button(root, text="Add Alarm", command=add_alarm).pack(pady=5)
+add_button = widgets.Button(description='Add Alarm')
+add_button.on_click(add_alarm_handler)
 
-# Listbox to show alarms
-box = tk.Listbox(root, width=20, height=8); box.pack()
+# Dropdown to select alarm to delete
+delete_selector = widgets.Dropdown(options=[], description='Select Alarm to Delete:')
+delete_button = widgets.Button(description='Delete Selected Alarm')
+delete_button.on_click(delete_alarm_handler)
 
-tk.Button(root, text="Delete", command=delete_alarm).pack(pady=5)
-threading.Thread(target=check_alarms, daemon=True).start()
+# Arrange widgets
+input_widgets = widgets.HBox([hour_input, minute_input, second_input])
+add_section = widgets.VBox([input_widgets, add_button])
+delete_section = widgets.VBox([delete_selector, delete_button])
 
-root.mainloop()
+display(add_section, delete_section, alarm_output)
+
+# Initial display update
+update_list()
+
+# Start the alarm checking thread
+alarm_thread = threading.Thread(target=check_alarms, daemon=True)
+alarm_thread.start()
+
