@@ -3,9 +3,9 @@
 
 ## Problem Statement:
 
-People often forget important tasks, meetings, or reminders since they don't have a straightforward and quick way to set alarms. Many reminder applications on the market are complex, requiring access to the internet or complex setup.
+Many people forget important tasks and daily routines due to the absence of an easy and quick reminder system. Most alarm applications are either overly complicated or require an internet connection or installation.
 
-This requires a simple, offline, and user-friendly alarm system that offers users the ability to set multiple alerts and have timely notifications without any extra dependencies.
+This project is a minimal, offline, and user-friendly alarm clock developed using Python and Tkinter.
 
 ---
 
