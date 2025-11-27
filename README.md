@@ -104,6 +104,24 @@ Follow these steps to use the Python Alarm Clock Application:
 
 - You can add any number of alarms.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
 - All alarms will trigger independently at their scheduled times.
 
 
