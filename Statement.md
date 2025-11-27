@@ -7,7 +7,6 @@ Many people forget important tasks and daily routines due to the absence of an e
 
 This project is a minimal, offline, and user-friendly alarm clock developed using Python and Tkinter.
 
----
 
 ## Project Scope
 
@@ -30,7 +29,22 @@ The scope of this project includes:
 - Saving alarms permanently
 
 - Date-based alarms
----
+
+## Target users
+
+- Who need simple reminder alarms while studying
+
+- Useful for timing study sessions, breaks, or online classes
+
+- Individuals learning Python and Jupyter Notebook
+
+- Users experimenting with widgets, threading, or time-based applications
+
+- For demonstrating real-time event handling
+
+- Anyone who needs a lightweight, easy-to-use alarm system
+
+- Does not require installation of heavy standalone applications
 
 ## High-Level Features
 
@@ -41,3 +55,5 @@ The scope of this project includes:
 - Popup Notifications: Alarm pops up an alert at the exact time.
 
 - Real-time monitoring: One background thread is always checking the current time. Easy GUI Interface: A simple layout from Tkinter for fast interactions. Multiple Alarms Support: Store and manage multiple alarms at once.
+
+
