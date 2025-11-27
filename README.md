@@ -1,67 +1,111 @@
-# Python Alarm Clock
+# Python Alarm Clock VITyarthi Project
+# Alarm Clock — Interactive Alarm Management System
+The following project is an interactive Alarm Clock Application developed using Python with IPyWidgets and Threading.
 
-## Features
+It allows users to create, delete, and manage multiple alarms with a clean GUI-based .
 
-- Allow users to add multiple alarms in HH:MM:SS format
+## Overview of the project 
 
-- Display all alarms in a list format
+The Python Alarm Clock Application provides an interactive alarm management system that helps users set, manage, and delete alarms. The project effectively uses IPyWidgets for building a neat and user-friendly UI and uses Python threading to continuously monitor alarm times in the background without disturbing the user interface.
 
-- Allow deletion of selected alarms at any time
-
-- Show a pop-up alert when the alarm time matches the current time
-
-- Perform real-time background checks using threading
-
-- Offer a simple and lightweight Tkinter GUI
-
-## Problem Statement
-
-Many people forget important tasks and daily routines due to the absence of an easy and quick reminder system.
-Most alarm applications are either overly complicated or require an internet connection or installation.
-
-This project is a minimal, offline, and user-friendly alarm clock developed using Python and Tkinter.
-
-## Objectives
-
-- Enable users to set multiple alarms with precise timing.
-
-- Provide a straightforward GUI for adding and removing alarms.
-
-- Trigger a pop-up notification when an alarm is activated.
-
-- Ensure the application runs smoothly without freezing the user interface.
-
-- Deliver a lightweight and easy-to-use alarm application.
+It allows the user to input time in the format HH:MM:SS, set multiple alarms, list all active alarms, and delete any alarm if desired. A background daemon thread constantly compares the current system time with the stored alarm list and triggers a notification whenever an alarm condition is met.
 
 
-## Getting Started
+## Features 
+- Major Functional Modules.
+  
+- Alarm Creation Module.
 
-### Prerequisites
+- Users can enter HH:MM:SS to add new alarms.
 
-Python 3.x
+- Alarm Monitoring Module
 
-Tkinter (pre-installed with Python)
+- A background thread checks for scheduled alarms and triggers notifications.
 
-Installation
+- Alarm Management Module
 
-- Save the code in a file.
+- Users can view, select, and delete alarms via a dropdown interface.
 
-- Open the terminal and run.
+### Additional Features
 
----
+- Real-time alarm checking.
 
-### Usage Guide
+- Clean interactive UI using ipywidgets.
 
-- Input the time in hours, minutes, and seconds.
+- Non-blocking background execution.
 
-- Click the "Add Alarm" button to save it in the list.
+- Notification output when alarm time coincides with system time
 
-- The added alarm will be displayed in the listbox.
 
-- In the background, the program checks the time every second.
- 
-- When the alarm time is reached, a pop-up window appears.
+ ## Technologies Used
+- Technologygoal
+- Python_CORE programming language
+- IPyWidgets\tGUI for input fields & buttons
+- Threading	Non-blocking alarm monitoring
+- Datetime	Timing comparison and display
 
-- Click the "Delete" button after selecting any alarm from the list.
+## Steps to install and run the project
+- Install Python
+- Dowload the project
+- Run the programme
+- Start using the Alram
 
-###
+## Usage Instruction 
+
+Follow these steps to use the Python Alarm Clock Application:
+
+### 1. Enter Alarm Time
+
+- You will see three input fields:
+
+- Hour (0–23)
+
+- Minute (0–59)
+
+- Second (0–59)
+
+- Type the desired alarm time in HH:MM:SS format.
+
+### 2. Add an Alarm
+
+- After entering the time, click “Add Alarm”.
+
+- The alarm will be added to the internal list.
+
+- All active alarms will appear in the dropdown menu.
+
+### 3. View Available Alarms
+
+- Open the "Select Alarm to Delete" dropdown.
+
+- All added alarms will be displayed.
+
+- Helps you track existing alarms.
+
+### 4. Delete an Alarm
+
+- Select any alarm from the dropdown menu.
+
+- Click “Delete Selected Alarm” to remove it.
+
+- The alarm will immediately disappear from the list.
+
+### 5. Alarm Triggering
+
+- Keep the notebook running.
+
+- A background thread continuously checks system time.
+
+- When it matches an alarm time:
+
+- A notification appears in the output box (e.g., “Alarm ringing for 07:30:00!”).
+
+### 6. Add Multiple Alarms
+
+- You can add any number of alarms.
+
+- All alarms will trigger independently at their scheduled times.
+
+
+  
+  
