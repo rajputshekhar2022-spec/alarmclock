@@ -106,7 +106,9 @@ Follow these steps to use the Python Alarm Clock Application:
 
 ## Result
 
-![image alt]()
+![image alt](https://github.com/rajputshekhar2022-spec/alarmclock/blob/main/Readme%20picture%201.png)
+
+
 
 
 
